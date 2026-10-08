@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "tsx watch src/main.ts",
-    "build": "prisma generate && tsc",
+    "build": "pnpm --filter @still/contracts build && prisma generate && tsc",
     "start": "node dist/main.js",
     "typecheck": "tsc --noEmit",
     "db:generate": "prisma generate",
