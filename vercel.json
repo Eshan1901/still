@@ -3,10 +3,12 @@
   "services": {
     "api": {
       "root": "apps/api",
+      "buildCommand": "cd ../.. && pnpm --filter @still/contracts build && cd apps/api && pnpm run build",
       "framework": "nestjs"
     },
     "web": {
       "root": "apps/web",
+      "buildCommand": "cd ../.. && pnpm --filter @still/contracts build && pnpm --filter @still/design-tokens build && cd apps/web && pnpm run build",
       "framework": "vite"
     }
   },

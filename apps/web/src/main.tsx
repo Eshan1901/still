@@ -6,7 +6,7 @@ import { App } from './app';
 import './styles.css';
 import { tokens } from '@still/design-tokens';
 for (const [name, value] of Object.entries(tokens.color))
-  document.documentElement.style.setProperty('--' + name, value);
+  document.documentElement.style.setProperty('--' + name, value as string);
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: { retry: false, staleTime: 15000, refetchOnWindowFocus: true },
