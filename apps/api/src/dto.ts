@@ -3,25 +3,33 @@ import type { Project, Task, ProjectStatus, TaskStatus, Priority } from './gener
 export const projectStatusDb = {
   'Not Started': 'NOT_STARTED',
   'In Progress': 'IN_PROGRESS',
+  'On Hold': 'ON_HOLD',
   Completed: 'COMPLETED',
+  Cancelled: 'CANCELLED',
 } as const;
 export const taskStatusDb = {
   Pending: 'PENDING',
   'In Progress': 'IN_PROGRESS',
+  'In Review': 'IN_REVIEW',
   Completed: 'COMPLETED',
+  Cancelled: 'CANCELLED',
 } as const;
-export const priorityDb = { Low: 'LOW', Medium: 'MEDIUM', High: 'HIGH' } as const;
+export const priorityDb = { Low: 'LOW', Medium: 'MEDIUM', High: 'HIGH', Critical: 'CRITICAL' } as const;
 const projectStatus = {
   NOT_STARTED: 'Not Started',
   IN_PROGRESS: 'In Progress',
+  ON_HOLD: 'On Hold',
   COMPLETED: 'Completed',
+  CANCELLED: 'Cancelled',
 } as const;
 const taskStatus = {
   PENDING: 'Pending',
   IN_PROGRESS: 'In Progress',
+  IN_REVIEW: 'In Review',
   COMPLETED: 'Completed',
+  CANCELLED: 'Cancelled',
 } as const;
-const priority = { LOW: 'Low', MEDIUM: 'Medium', HIGH: 'High' } as const;
+const priority = { LOW: 'Low', MEDIUM: 'Medium', HIGH: 'High', CRITICAL: 'Critical' } as const;
 export const date = (v: string) => new Date(v + 'T00:00:00.000Z');
 export function projectData(v: ProjectInput) {
   return {

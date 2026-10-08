@@ -1,8 +1,8 @@
 import { z } from 'zod';
 
-export const projectStatuses = ['Not Started', 'In Progress', 'Completed'] as const;
-export const taskStatuses = ['Pending', 'In Progress', 'Completed'] as const;
-export const priorities = ['Low', 'Medium', 'High'] as const;
+export const projectStatuses = ['Not Started', 'In Progress', 'On Hold', 'Completed', 'Cancelled'] as const;
+export const taskStatuses = ['Pending', 'In Progress', 'In Review', 'Completed', 'Cancelled'] as const;
+export const priorities = ['Low', 'Medium', 'High', 'Critical'] as const;
 export const idSchema = z.uuid();
 export const dateSchema = z
   .string()
