@@ -19,8 +19,11 @@
     "db:seed": "pnpm --filter @still/api db:seed"
   },
   "devDependencies": {
-    "typescript": "~5.9.3",
     "@types/node": "^22.0.0",
-    "prettier": "^3.0.0"
+    "prettier": "^3.0.0",
+    "typescript": "~5.9.3"
+  },
+  "dependencies": {
+    "reflect-metadata": "^0.2.2"
   }
 }
