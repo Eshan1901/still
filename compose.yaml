@@ -1,18 +1,19 @@
 services:
-  postgres:
-    image: postgres:17-alpine
+  mysql:
+    image: mysql:8.4
     environment:
-      POSTGRES_DB: still
-      POSTGRES_USER: still
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in your root .env}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:?Set MYSQL_ROOT_PASSWORD in your root .env}
+      MYSQL_DATABASE: ${MYSQL_DATABASE:?Set MYSQL_DATABASE in your root .env}
+      MYSQL_USER: ${MYSQL_USER:?Set MYSQL_USER in your root .env}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:?Set MYSQL_PASSWORD in your root .env}
     ports:
-      - '127.0.0.1:5432:5432'
+      - '127.0.0.1:3306:3306'
     volumes:
-      - still-postgres:/var/lib/postgresql/data
+      - still-mysql:/var/lib/mysql
     healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U still -d still']
+      test: ['CMD', 'mysqladmin', 'ping', '-h', '127.0.0.1', '-u', 'myuser', '--password=ES1902']
       interval: 5s
       timeout: 5s
       retries: 10
 volumes:
-  still-postgres:
+  still-mysql:

@@ -4,6 +4,6 @@ export default defineConfig({
   schema: 'prisma/schema.prisma',
   migrations: { path: 'prisma/migrations', seed: 'tsx prisma/seed.ts' },
   datasource: {
-    url: process.env.DATABASE_URL ?? 'postgresql://placeholder:placeholder@127.0.0.1:5432/still',
+    url: process.env.DATABASE_URL ?? 'mysql://placeholder:placeholder@127.0.0.1:3306/still',
   },
 });

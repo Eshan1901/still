@@ -2,7 +2,7 @@ import 'dotenv/config';
 import { z } from 'zod';
 const schema = z.object({
   NODE_ENV: z.enum(['development', 'staging', 'production']).default('development'),
-  DATABASE_URL: z.url().refine((v) => /^postgres(ql)?:/.test(v)),
+  DATABASE_URL: z.url().refine((v) => /^mysql:/.test(v), 'Must be a valid MySQL connection string'),
   JWT_SECRET: z
     .string()
     .min(32)
