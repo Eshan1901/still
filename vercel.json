@@ -2,11 +2,13 @@
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "services": {
     "api": {
-      "root": "apps/api",
+      "buildCommand": "pnpm --filter @still/api build",
+      "outputDirectory": "apps/api/dist",
       "framework": "nestjs"
     },
     "web": {
-      "root": "apps/web",
+      "buildCommand": "pnpm --filter @still/web build",
+      "outputDirectory": "apps/web/dist",
       "framework": "vite"
     }
   },
